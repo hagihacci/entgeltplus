@@ -1,2 +1,1052 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="refresh" content="0; url=indexhelm.html" /></head><body></body></html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Helmsauer Gruppe — Attraktive Personalinstrumente im Mittelstand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <style>
+    /* ═══════════════════════════════════════
+       DESIGN TOKENS
+    ═══════════════════════════════════════ */
+    :root {
+      --blue-primary:   #1B67D2;
+      --blue-dark:      #1047A9;
+      --blue-light:     #EAF1FB;
+      --navy-deep:      #0B1F3A;
+      --navy-mid:       #112240;
+      --navy-card:      #162B4A;
+      --white:          #FFFFFF;
+      --gray-50:        #F7F9FC;
+      --gray-100:       #EEF1F7;
+      --gray-200:       #DDE3EE;
+      --gray-400:       #8A97AE;
+      --gray-600:       #5A6880;
+      --gray-700:       #3D4A5C;
+      --text-primary:   #0D1B2E;
+      --text-secondary: #4A5568;
+
+      --font-h: 'Lexend', sans-serif;
+      --font-b: 'Source Sans 3', sans-serif;
+
+      --r-sm: 8px;
+      --r-md: 14px;
+      --r-lg: 20px;
+      --r-xl: 28px;
+
+      --shadow-sm: 0 2px 8px rgba(11,31,58,0.07);
+      --shadow-md: 0 6px 24px rgba(11,31,58,0.10);
+      --shadow-lg: 0 16px 48px rgba(11,31,58,0.13);
+
+      --max-w: 1180px;
+      --py: 96px;
+      --t: 0.24s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* ═══════════════════════════════════════
+       BASE
+    ═══════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-b); font-size: 17px; line-height: 1.75; color: var(--text-primary); background: var(--white); }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    h1,h2,h3,h4 { font-family: var(--font-h); line-height: 1.2; font-weight: 700; color: var(--text-primary); }
+    h1 { font-size: clamp(34px, 4.8vw, 56px); }
+    h2 { font-size: clamp(26px, 3.2vw, 40px); }
+    h3 { font-size: clamp(18px, 1.8vw, 22px); font-weight: 600; }
+    h4 { font-size: 16px; font-weight: 600; }
+    p { color: var(--text-secondary); }
+
+    .label {
+      display: inline-block;
+      font-family: var(--font-h);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--blue-primary);
+      margin-bottom: 10px;
+    }
+
+    /* ═══════════════════════════════════════
+       LAYOUT
+    ═══════════════════════════════════════ */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; }
+    .section { padding: var(--py) 0; }
+    .section--gray { background: var(--gray-50); }
+    .section--dark { background: var(--navy-deep); color: var(--white); }
+    .section--dark-mid { background: var(--navy-mid); color: var(--white); }
+    .section--dark h2, .section--dark h3, .section--dark h4,
+    .section--dark-mid h2, .section--dark-mid h3, .section--dark-mid h4 { color: var(--white); }
+    .section--dark p, .section--dark-mid p { color: rgba(255,255,255,0.68); }
+
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .split--60 { grid-template-columns: 1.1fr 0.9fr; }
+    .g3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .g4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 22px; }
+    .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+
+    .sh { margin-bottom: 52px; }
+    .sh h2 { margin-top: 8px; }
+    .sh p { margin-top: 14px; max-width: 620px; font-size: 18px; }
+    .sh--c { text-align: center; }
+    .sh--c p { margin-left: auto; margin-right: auto; }
+
+    /* ═══════════════════════════════════════
+       BUTTONS
+    ═══════════════════════════════════════ */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-h); font-size: 15px; font-weight: 600;
+      padding: 13px 26px; border-radius: var(--r-sm);
+      transition: var(--t); white-space: nowrap;
+    }
+    .btn--primary { background: var(--blue-primary); color: #fff; }
+    .btn--primary:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(27,103,210,0.38); }
+    .btn--ghost { border: 1.5px solid var(--blue-primary); color: var(--blue-primary); }
+    .btn--ghost:hover { background: var(--blue-light); transform: translateY(-2px); }
+    .btn--ghost-w { border: 1.5px solid rgba(255,255,255,0.55); color: #fff; }
+    .btn--ghost-w:hover { background: rgba(255,255,255,0.1); }
+    .btn--white { background: #fff; color: var(--blue-primary); }
+    .btn--white:hover { background: var(--gray-100); transform: translateY(-2px); }
+    .bgroup { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* ═══════════════════════════════════════
+       CARDS & COMPONENTS
+    ═══════════════════════════════════════ */
+    .card {
+      background: var(--white); border-radius: var(--r-md);
+      padding: 28px; box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-200); transition: var(--t);
+    }
+    .card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: rgba(27,103,210,0.22); }
+    .card--top { border-top: 3px solid var(--blue-primary); }
+    .card--dark { background: var(--navy-card); border-color: rgba(255,255,255,0.07); }
+    .card--dark:hover { border-color: rgba(27,103,210,0.5); }
+
+    .ibox {
+      width: 46px; height: 46px; border-radius: var(--r-sm);
+      background: var(--blue-light); display: flex;
+      align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .ibox svg { color: var(--blue-primary); }
+    .ibox--lg { width: 56px; height: 56px; border-radius: var(--r-md); }
+    .ibox--dark { background: rgba(27,103,210,0.2); }
+    .ibox--dark svg { color: #7EB8F7; }
+
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--blue-light); border: 1px solid rgba(27,103,210,0.2);
+      color: var(--blue-dark); font-family: var(--font-h);
+      font-size: 13px; font-weight: 600;
+      padding: 6px 14px; border-radius: 100px;
+    }
+    .badge--white {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.25);
+      color: #fff;
+    }
+    .badge--opt {
+      background: rgba(27,103,210,0.15);
+      border-color: rgba(27,103,210,0.3);
+      color: #6BAAF5;
+    }
+
+    .callout {
+      background: var(--blue-light);
+      border-left: 4px solid var(--blue-primary);
+      border-radius: var(--r-sm);
+      padding: 18px 22px;
+      font-family: var(--font-h); font-weight: 600; font-size: 15.5px;
+      color: var(--blue-dark);
+      margin-top: 40px;
+    }
+
+    /* ═══════════════════════════════════════
+       REVEAL ANIMATION
+    ═══════════════════════════════════════ */
+    .rv { opacity: 0; transform: translateY(26px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .rv.on { opacity: 1; transform: none; }
+    .d1 { transition-delay: 0.08s; }
+    .d2 { transition-delay: 0.16s; }
+    .d3 { transition-delay: 0.24s; }
+    .d4 { transition-delay: 0.32s; }
+    .d5 { transition-delay: 0.40s; }
+
+    /* ═══════════════════════════════════════
+       NAV
+    ═══════════════════════════════════════ */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .nav__i { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+    .nav__logo {
+      font-family: var(--font-h); font-size: 18px; font-weight: 700;
+      color: var(--text-primary); display: flex; align-items: center; gap: 10px;
+    }
+    .nav__mark {
+      width: 34px; height: 34px; background: var(--blue-primary);
+      border-radius: 7px; display: flex; align-items: center; justify-content: center;
+    }
+    .nav__mark svg { color: #fff; }
+    .nav__logo em { color: var(--blue-primary); font-style: normal; }
+    .nav__logo .sub {
+      font-size: 11px; font-weight: 400; color: var(--gray-600);
+      display: block; line-height: 1;
+    }
+    .nav__logo .logotext { display: flex; flex-direction: column; }
+    .nav__actions { display: flex; gap: 10px; align-items: center; }
+    .nav__hb { display: none; flex-direction: column; gap: 5px; padding: 8px; }
+    .nav__hb span { display: block; width: 23px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: var(--t); }
+    .nav__hb.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav__hb.open span:nth-child(2) { opacity: 0; }
+    .nav__hb.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav__mob { display: none; flex-direction: column; gap: 10px; padding: 18px 32px 22px; background: #fff; border-top: 1px solid var(--gray-200); }
+    .nav__mob.open { display: flex; }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    .hero {
+      position: relative; min-height: 100svh;
+      display: flex; align-items: center; overflow: hidden;
+      background: var(--navy-deep);
+    }
+    .hero__bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+    .hero__bg video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .hero__bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(11,31,58,0.86) 0%, rgba(17,34,64,0.75) 55%, rgba(27,103,210,0.22) 100%);
+      z-index: 1;
+    }
+    .hero__deco {
+      position: absolute; top: -100px; right: -60px;
+      width: 520px; height: 520px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(27,103,210,0.15) 0%, transparent 70%);
+      z-index: 1; pointer-events: none;
+    }
+    .hero .container { margin: 0; padding-left: clamp(32px, 6vw, 120px); padding-right: 32px; }
+    .hero__c { position: relative; z-index: 2; max-width: 620px; padding: 120px 0 100px; text-align: left; }
+    .hero__tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(27,103,210,0.18); border: 1px solid rgba(27,103,210,0.32);
+      color: #7EB8F7; font-size: 12.5px; font-weight: 600;
+      letter-spacing: 0.07em; padding: 6px 14px; border-radius: 100px;
+      font-family: var(--font-h); margin-bottom: 28px;
+    }
+    .hero h1 { color: #fff; letter-spacing: -0.02em; margin-bottom: 28px; }
+    .hero__subs { display: flex; flex-direction: column; gap: 6px; margin-bottom: 36px; }
+    .hero__sub-line {
+      display: flex; align-items: center; gap: 12px;
+      font-family: var(--font-h); font-size: clamp(16px, 1.6vw, 19px); font-weight: 400;
+      color: rgba(255,255,255,0.82);
+      opacity: 0; transform: translateX(-16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .hero__sub-line.on { opacity: 1; transform: none; }
+    .hero__sub-line::before {
+      content: ''; display: block; width: 22px; height: 2px;
+      background: var(--blue-primary); flex-shrink: 0; border-radius: 2px;
+    }
+    .hero__scroll {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 5px;
+      color: rgba(255,255,255,0.35); font-size: 10.5px; font-family: var(--font-h);
+      letter-spacing: 0.1em; text-transform: uppercase;
+      animation: bob 2s ease-in-out infinite;
+    }
+    .hero__scroll svg { color: rgba(255,255,255,0.35); }
+    @keyframes bob { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(7px); } }
+
+    /* ═══════════════════════════════════════
+       INTRO
+    ═══════════════════════════════════════ */
+    .intro { padding: 80px 0 72px; }
+    .intro__body {
+      max-width: 760px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .intro__body p { font-size: 18px; line-height: 1.8; color: var(--text-secondary); }
+    .intro__highlight {
+      border-left: 4px solid var(--blue-primary);
+      padding: 16px 24px;
+      background: var(--blue-light);
+      border-radius: 0 var(--r-sm) var(--r-sm) 0;
+      font-size: 18px; font-weight: 600; font-family: var(--font-h);
+      color: var(--blue-dark); line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════
+       S2 — HERAUSFORDERUNGEN
+    ═══════════════════════════════════════ */
+    .chall-card { display: flex; flex-direction: column; gap: 14px; }
+    .chall-card h3 { margin-top: 2px; }
+    .chall-card p { font-size: 15px; }
+
+    /* ═══════════════════════════════════════
+       S3 — ENTGELTPLUS
+    ═══════════════════════════════════════ */
+    .ep-text p { font-size: 16.5px; line-height: 1.78; margin-top: 14px; }
+    .ep-variants { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
+    .ep-variant {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 18px; border-radius: var(--r-sm);
+      border: 1.5px solid var(--blue-primary);
+      font-family: var(--font-h); font-size: 14px; font-weight: 600;
+      color: var(--blue-primary); transition: var(--t);
+    }
+    .ep-variant:hover { background: var(--blue-light); }
+    .ep-variant svg { flex-shrink: 0; }
+    .ep-benefits {
+      background: var(--gray-50);
+      border-radius: var(--r-xl);
+      padding: 36px 32px;
+      border: 1px solid var(--gray-200);
+    }
+    .ep-benefits h3 { margin-bottom: 20px; font-size: 18px; }
+    .ep-benefit-item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 0; border-bottom: 1px solid var(--gray-200);
+      font-size: 15.5px; font-weight: 500; font-family: var(--font-h);
+      color: var(--text-primary);
+    }
+    .ep-benefit-item:first-of-type { border-top: 1px solid var(--gray-200); }
+    .ep-benefit-item svg { color: var(--blue-primary); flex-shrink: 0; }
+    .ep-more {
+      margin-top: 14px; font-size: 14px; color: var(--gray-400);
+      font-family: var(--font-h); text-align: center;
+    }
+
+    /* ═══════════════════════════════════════
+       S4 — HEBELWIRKUNG
+    ═══════════════════════════════════════ */
+    .hbw-intro { max-width: 820px; margin: 0 auto 56px; text-align: center; }
+    .hbw-intro p { font-size: 17.5px; color: rgba(255,255,255,0.7); margin-top: 12px; }
+    .hbw-quote-top {
+      margin-bottom: 52px; padding: 22px 28px;
+      background: rgba(27,103,210,0.16);
+      border: 1px solid rgba(27,103,210,0.3);
+      border-radius: var(--r-md);
+      font-family: var(--font-h); font-size: 17px; font-weight: 500;
+      color: rgba(255,255,255,0.88); text-align: center; font-style: italic;
+    }
+    .hbw-flow {
+      display: grid; grid-template-columns: 1fr 40px 1fr 40px 1fr; gap: 0;
+      align-items: start; margin-bottom: 0;
+    }
+    .hbw-step {
+      background: var(--navy-card); border-radius: var(--r-md);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 28px 24px; display: flex; flex-direction: column; gap: 14px;
+    }
+    .hbw-step__num {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--blue-primary); display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-h); font-size: 16px; font-weight: 700; color: #fff; flex-shrink: 0;
+    }
+    .hbw-step h3 { color: #fff; font-size: 18px; }
+    .hbw-step p { font-size: 14.5px; color: rgba(255,255,255,0.65); }
+    .hbw-step__pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+    .hbw-arrow {
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(27,103,210,0.7); padding-top: 40px;
+    }
+
+    /* ═══════════════════════════════════════
+       S5 — SERVICE-ZENTRUM
+    ═══════════════════════════════════════ */
+    .sz-comps { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 36px; }
+    .sz-stepper { display: flex; flex-direction: column; gap: 0; }
+    .sz-step {
+      display: grid; grid-template-columns: 52px 1fr;
+      gap: 20px; position: relative;
+    }
+    .sz-step:not(:last-child)::after {
+      content: ''; position: absolute;
+      left: 25px; top: 52px; bottom: -28px;
+      width: 2px; background: var(--blue-light);
+    }
+    .sz-step:not(:last-child) { padding-bottom: 32px; }
+    .sz-step__num {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--blue-primary); display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-h); font-size: 17px; font-weight: 700; color: #fff;
+      flex-shrink: 0; position: relative; z-index: 1;
+    }
+    .sz-step__body { padding-top: 12px; }
+    .sz-step__body h4 { font-size: 17px; margin-bottom: 4px; }
+    .sz-step__body p { font-size: 14.5px; }
+
+    /* ═══════════════════════════════════════
+       S6 — ASSIST
+    ═══════════════════════════════════════ */
+    .assist-list { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+    .assist-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      font-size: 15.5px; color: rgba(255,255,255,0.8);
+    }
+    .assist-item svg { color: #6BAAF5; flex-shrink: 0; margin-top: 3px; }
+    .assist-divider { width: 1px; background: rgba(255,255,255,0.1); margin: 0 8px; }
+
+    /* ═══════════════════════════════════════
+       S7 — TAWODO
+    ═══════════════════════════════════════ */
+    .tawodo-mockup {
+      border-radius: var(--r-xl); overflow: hidden;
+      background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
+      aspect-ratio: 9/16; max-width: 260px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .tawodo-mockup-in { display: flex; flex-direction: column; align-items: center; gap: 12px; color: rgba(255,255,255,0.45); }
+    .tawodo-features { display: flex; flex-direction: column; gap: 20px; }
+    .tawodo-feature {
+      background: var(--white); border-radius: var(--r-md);
+      padding: 24px; border: 1px solid var(--gray-200);
+      display: flex; gap: 16px; align-items: flex-start;
+      transition: var(--t);
+    }
+    .tawodo-feature:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: rgba(27,103,210,0.22); }
+    .tawodo-feature h3 { margin-bottom: 6px; font-size: 18px; }
+    .tawodo-feature p { font-size: 14.5px; }
+
+    /* ═══════════════════════════════════════
+       S8 — INTEGRIERTES SYSTEM (CTA)
+    ═══════════════════════════════════════ */
+    .sys-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; margin: 40px 0; }
+    .sys-card {
+      border-top: 3px solid var(--blue-primary);
+      background: var(--navy-card);
+      border-radius: var(--r-md);
+      border-left: 1px solid rgba(255,255,255,0.07);
+      border-right: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 24px 22px;
+      display: flex; gap: 14px; align-items: flex-start;
+      transition: var(--t);
+    }
+    .sys-card:hover { border-color: rgba(27,103,210,0.5); transform: translateY(-2px); }
+    .sys-card h4 { color: #fff; font-size: 16px; margin-bottom: 4px; }
+    .sys-card p { font-size: 13.5px; color: rgba(255,255,255,0.55); }
+    .sys-benefits {
+      display: grid; grid-template-columns: repeat(2,1fr);
+      gap: 12px; margin: 0 0 44px;
+    }
+    .sys-benefit {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 15px; color: rgba(255,255,255,0.75);
+    }
+    .sys-benefit svg { color: #6BAAF5; flex-shrink: 0; margin-top: 3px; }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    .footer { background: var(--navy-mid); padding: 60px 0 28px; }
+    .footer__g {
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px; padding-bottom: 44px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      margin-bottom: 28px;
+    }
+    .footer__brand h3 { color: #fff; font-size: 20px; margin-bottom: 10px; }
+    .footer__brand h3 em { color: #6BAAF5; font-style: normal; }
+    .footer__brand p { color: rgba(255,255,255,0.45); font-size: 14px; max-width: 280px; }
+    .footer__col h4 { color: rgba(255,255,255,0.4); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; font-family: var(--font-h); margin-bottom: 16px; }
+    .footer__col ul { display: flex; flex-direction: column; gap: 9px; }
+    .footer__col a { color: rgba(255,255,255,0.65); font-size: 14px; transition: color var(--t); }
+    .footer__col a:hover { color: #fff; }
+    .footer__bot { display: flex; justify-content: space-between; font-size: 12.5px; color: rgba(255,255,255,0.3); }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .g4 { grid-template-columns: repeat(2,1fr); }
+      .hbw-flow { grid-template-columns: 1fr; gap: 0; }
+      .hbw-arrow { display: none; }
+      .hbw-step { margin-bottom: 16px; }
+      .sys-benefits { grid-template-columns: 1fr; }
+      .footer__g { grid-template-columns: 1fr 1fr; }
+      .footer__brand { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --py: 60px; }
+      .nav__actions { display: none; }
+      .nav__hb { display: flex; }
+      .split, .split--60, .g3 { grid-template-columns: 1fr; gap: 32px; }
+      .g4 { grid-template-columns: repeat(2,1fr); }
+      .split .ep-benefits { order: -1; }
+      .tawodo-mockup { max-width: 200px; }
+      .sys-cards { grid-template-columns: 1fr; }
+      .footer__g { grid-template-columns: 1fr; gap: 32px; }
+      .footer__brand { grid-column: unset; }
+      .footer__bot { flex-direction: column; gap: 6px; text-align: center; }
+      .hero__c { padding: 90px 0 90px; }
+      .intro__body { gap: 16px; }
+      .intro__body p { font-size: 16.5px; }
+      .bgroup { flex-direction: column; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 20px; }
+      .g4 { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAV
+══════════════════════════════════════════ -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__i">
+      <a href="#" class="nav__logo">
+        <div class="nav__mark">
+          <i data-lucide="shield-check" width="17" height="17"></i>
+        </div>
+        <div class="logotext">
+          <span>Helmsauer <em>Gruppe</em></span>
+          <span class="sub">Service- und Expertenzentrum</span>
+        </div>
+      </a>
+      <div class="nav__actions">
+        <a href="#s8" class="btn btn--ghost" style="padding:9px 18px;font-size:14px;">Mehr erfahren</a>
+        <a href="#s8" class="btn btn--primary" style="padding:9px 18px;font-size:14px;">
+          <i data-lucide="calendar" width="14" height="14"></i>
+          Erstgespräch vereinbaren
+        </a>
+      </div>
+      <div class="nav__hb" id="hb"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <div class="nav__mob" id="navmob">
+    <a href="#s2" class="btn btn--ghost" style="text-align:center;">Leistungen</a>
+    <a href="#s8" class="btn btn--primary" style="text-align:center;">Erstgespräch vereinbaren</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     S1 — HERO
+══════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero__bg">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="/assets/hero.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="hero__deco"></div>
+  <div class="container">
+    <div class="hero__c">
+      <div class="hero__tag">
+        <i data-lucide="building-2" width="13" height="13"></i>
+        Personalinstrumente für den Mittelstand — Helmsauer Gruppe
+      </div>
+      <h1>Attraktive Personalinstrumente im Mittelstand</h1>
+      <div class="hero__subs" id="heroSubs">
+        <div class="hero__sub-line">Mitarbeiterbindung stärken.</div>
+        <div class="hero__sub-line">Vorsorge strukturiert organisieren.</div>
+        <div class="hero__sub-line">Arbeitgeberleistungen sichtbar machen.</div>
+      </div>
+      <div class="bgroup">
+        <a href="#s8" class="btn btn--primary">
+          <i data-lucide="calendar" width="16" height="16"></i>
+          Erstgespräch vereinbaren
+        </a>
+        <a href="#s2" class="btn btn--ghost-w">
+          <i data-lucide="arrow-down" width="16" height="16"></i>
+          Mehr erfahren
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="hero__scroll">
+    <i data-lucide="chevron-down" width="20" height="20"></i>
+    Scroll
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     INTRO
+══════════════════════════════════════════ -->
+<div class="intro">
+  <div class="container">
+    <div class="intro__body rv">
+      <p>Der Arbeitsmarkt hat sich in den letzten Jahren spürbar verändert. Qualifizierte Mitarbeitende sind zunehmend schwer zu gewinnen und langfristig zu binden. Gleichzeitig steigen die Erwartungen an Arbeitgeberleistungen, während Kosten und organisatorischer Aufwand im Personalbereich weiter zunehmen.</p>
+      <p>Viele Unternehmen stehen daher vor der Frage, wie sie attraktive Zusatzleistungen für ihre Mitarbeitenden schaffen können, ohne dabei zusätzliche Komplexität in der Verwaltung entstehen zu lassen.</p>
+      <p>Moderne Personalinstrumente bieten hier neue Möglichkeiten. Sie verbinden zusätzliche Vorteile für Mitarbeitende mit einer strukturierten Organisation betrieblicher Vorsorge- und Benefitlösungen.</p>
+      <div class="intro__highlight">
+        Mit dem Service- und Expertenzentrum Vorsorge &amp; Benefits bietet die Helmsauer Gruppe ein integriertes System, das Unternehmen bei der Einführung und Organisation moderner Arbeitgeberleistungen unterstützt.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     S2 — NEUE ANFORDERUNGEN
+══════════════════════════════════════════ -->
+<section class="section section--gray" id="s2">
+  <div class="container">
+    <div class="sh rv">
+      <div class="label">Der Kontext</div>
+      <h2>Neue Anforderungen an Arbeitgeber</h2>
+      <p>Der Arbeitsmarkt verändert sich. Unternehmen stehen heute vor mehreren zentralen Herausforderungen:</p>
+    </div>
+    <div class="g4">
+      <div class="card card--top rv d1">
+        <div class="chall-card">
+          <div class="ibox"><i data-lucide="users" width="21" height="21"></i></div>
+          <h3>Wettbewerb um Mitarbeitende</h3>
+          <p>Qualifizierte Fachkräfte sind rar. Der Kampf um Talente fordert überzeugende Arbeitgeberleistungen.</p>
+        </div>
+      </div>
+      <div class="card card--top rv d2">
+        <div class="chall-card">
+          <div class="ibox"><i data-lucide="trending-up" width="21" height="21"></i></div>
+          <h3>Steigende Lohn&shy;neben&shy;kosten</h3>
+          <p>Lohn- und Lohnnebenkosten steigen kontinuierlich und belasten Unternehmen jeder Größe.</p>
+        </div>
+      </div>
+      <div class="card card--top rv d3">
+        <div class="chall-card">
+          <div class="ibox"><i data-lucide="sparkles" width="21" height="21"></i></div>
+          <h3>Neue Generationen&shy;erwartungen</h3>
+          <p>Jüngere Mitarbeitende erwarten mehr als ein Gehalt — Sinn, Flexibilität und spürbare Benefits.</p>
+        </div>
+      </div>
+      <div class="card card--top rv d4">
+        <div class="chall-card">
+          <div class="ibox"><i data-lucide="file-clock" width="21" height="21"></i></div>
+          <h3>Steigender Admin&shy;aufwand</h3>
+          <p>Komplexe Personalprozesse binden Ressourcen, die im Kerngeschäft dringend gebraucht werden.</p>
+        </div>
+      </div>
+    </div>
+    <div class="callout rv">
+      Unternehmen benötigen moderne Personalinstrumente, die wirtschaftlich sinnvoll und organisatorisch umsetzbar sind.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     S3 — ENTGELTPLUS
+══════════════════════════════════════════ -->
+<section class="section" id="s3">
+  <div class="container">
+    <div class="split split--60">
+      <div class="ep-text rv">
+        <div class="label">EntgeltPlus</div>
+        <h2 style="margin-top:8px;">Gehaltsnahe Benefits — modern &amp; flexibel</h2>
+        <p style="margin-top:16px;">Mit EntgeltPlus bietet die Helmsauer Gruppe ein Konzept zur Einführung und Organisation gehaltsnaher Benefits.</p>
+        <p>Gehaltsnahe Benefits sind moderne Entgeltbausteine, die das klassische Gehalt sinnvoll ergänzen und flexibel kombinierbar sind. Sie nutzen steuerliche Gestaltungsmöglichkeiten, um das verfügbare Nettoeinkommen der Mitarbeitenden zu erhöhen.</p>
+        <p>So entstehen spürbare Mehrwerte für Mitarbeitende, während Unternehmen gleichzeitig wirtschaftlich effizient handeln können.</p>
+        <div class="ep-variants">
+          <div class="ep-variant">
+            <i data-lucide="plus-circle" width="15" height="15"></i>
+            On Top gewähren
+          </div>
+          <div class="ep-variant">
+            <i data-lucide="refresh-cw" width="15" height="15"></i>
+            Umwidmung bestehender Entgeltbestandteile
+          </div>
+        </div>
+        <div style="margin-top:28px;">
+          <a href="#s8" class="btn btn--primary">
+            <i data-lucide="arrow-right" width="15" height="15"></i>
+            Potenzial prüfen
+          </a>
+        </div>
+      </div>
+      <div class="ep-benefits rv d2">
+        <h3>Im Rahmen von EntgeltPlus einsetzbar:</h3>
+        <div class="ep-benefit-item">
+          <i data-lucide="gift" width="18" height="18"></i>
+          Warengutscheine
+        </div>
+        <div class="ep-benefit-item">
+          <i data-lucide="utensils" width="18" height="18"></i>
+          Essenszuschüsse
+        </div>
+        <div class="ep-benefit-item">
+          <i data-lucide="wifi" width="18" height="18"></i>
+          Internetpauschalen
+        </div>
+        <div class="ep-benefit-item">
+          <i data-lucide="sun" width="18" height="18"></i>
+          Erholungsbeihilfen
+        </div>
+        <p class="ep-more">… und viele weitere Bausteine</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     S4 — HEBELWIRKUNG (DARK)
+══════════════════════════════════════════ -->
+<section class="section section--dark" id="s4">
+  <div class="container">
+    <div class="hbw-intro rv">
+      <div class="label" style="color:#6BAAF5;">Der Mechanismus</div>
+      <h2 style="margin-top:8px;color:#fff;">Die Hebelwirkung von EntgeltPlus</h2>
+      <p>Gehaltsnahe Benefits erzeugen unmittelbare Liquiditätsvorteile — sowohl für Mitarbeitende als auch für das Unternehmen. Diese Liquiditätsoptimierung ermöglicht den gezielten Aufbau von Vorsorgelösungen, ohne die Nettovergütung spürbar zu belasten.</p>
+    </div>
+    <div class="hbw-quote-top rv">
+      „Die Entgeltgestaltung wird zur Zukunftsgestaltung."
+    </div>
+    <div class="hbw-flow">
+      <div class="hbw-step rv d1">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:4px;">
+          <div class="hbw-step__num">1</div>
+          <h3>Gehaltsnahe Benefits</h3>
+        </div>
+        <p>Steuerlich begünstigte Entgeltbausteine erhöhen das verfügbare Netto der Mitarbeitenden und reduzieren gleichzeitig Abgabenbelastungen.</p>
+      </div>
+      <div class="hbw-arrow rv d2">
+        <i data-lucide="arrow-right" width="28" height="28"></i>
+      </div>
+      <div class="hbw-step rv d2">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:4px;">
+          <div class="hbw-step__num">2</div>
+          <h3>Entstehende Liquidität</h3>
+        </div>
+        <p>Durch steuerliche und sozialversicherungsrechtliche Vorteile entstehen finanzielle Spielräume — für Mitarbeitende und Unternehmen.</p>
+      </div>
+      <div class="hbw-arrow rv d3">
+        <i data-lucide="arrow-right" width="28" height="28"></i>
+      </div>
+      <div class="hbw-step rv d3">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:4px;">
+          <div class="hbw-step__num">3</div>
+          <h3>Nutzung der Liquidität</h3>
+        </div>
+        <p>Diese Liquidität kann gezielt eingesetzt werden für weitere betriebliche Versorgungskonzepte:</p>
+        <div class="hbw-step__pills">
+          <div class="badge badge--white">
+            <i data-lucide="shield" width="12" height="12"></i>
+            Betriebliche Altersvorsorge
+          </div>
+          <div class="badge badge--white">
+            <i data-lucide="heart-pulse" width="12" height="12"></i>
+            Betriebliche Gesundheitsvorsorge
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     S5 — SERVICE-ZENTRUM
+══════════════════════════════════════════ -->
+<section class="section" id="s5">
+  <div class="container">
+    <div class="split">
+      <div class="rv">
+        <div class="label">Ihr Partner</div>
+        <h2 style="margin-top:8px;">Service- und Expertenzentrum Vorsorge &amp; Benefits</h2>
+        <p style="margin-top:14px;">Das Service- und Expertenzentrum bündelt innerhalb der Helmsauer Gruppe alle Kompetenzen rund um:</p>
+        <div class="sz-comps">
+          <div class="badge"><i data-lucide="shield" width="12" height="12"></i> Betriebliche Altersvorsorge</div>
+          <div class="badge"><i data-lucide="heart-pulse" width="12" height="12"></i> Betriebliche Gesundheitsvorsorge</div>
+          <div class="badge"><i data-lucide="gift" width="12" height="12"></i> Gehaltsnahe Benefits</div>
+        </div>
+        <p>Unternehmen werden bei der Einführung und Organisation strukturiert begleitet:</p>
+      </div>
+      <div class="rv d2">
+        <div class="sz-stepper">
+          <div class="sz-step">
+            <div class="sz-step__num">1</div>
+            <div class="sz-step__body">
+              <h4>Konzeption betrieblicher Vorsorgelösungen</h4>
+              <p>Entwicklung individueller Konzepte für Vorsorge und Benefits.</p>
+            </div>
+          </div>
+          <div class="sz-step">
+            <div class="sz-step__num">2</div>
+            <div class="sz-step__body">
+              <h4>Erstellung von Versorgungsordnungen</h4>
+              <p>Ausarbeitung der organisatorischen Grundlage für die Umsetzung.</p>
+            </div>
+          </div>
+          <div class="sz-step">
+            <div class="sz-step__num">3</div>
+            <div class="sz-step__body">
+              <h4>Arbeitsrechtliche Begleitunterlagen</h4>
+              <p>Bereitstellung der notwendigen Unterlagen zur Umsetzung bei den Mitarbeitenden.</p>
+            </div>
+          </div>
+          <div class="sz-step">
+            <div class="sz-step__num">4</div>
+            <div class="sz-step__body">
+              <h4>Information und Einführung im Unternehmen</h4>
+              <p>Begleitung durch Aushänge, Mitarbeitervorträge sowie Broschüren im Look &amp; Feel des Unternehmens.</p>
+            </div>
+          </div>
+          <div class="sz-step">
+            <div class="sz-step__num">5</div>
+            <div class="sz-step__body">
+              <h4>Integration in die Lohn- und Gehaltsabrechnung</h4>
+              <p>Unterstützung bei der organisatorischen Einbindung in die bestehende Lohnabrechnung.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     S6 — ASSIST (DARK)
+══════════════════════════════════════════ -->
+<section class="section section--dark-mid" id="s6">
+  <div class="container">
+    <div class="sh rv">
+      <div class="label" style="color:#6BAAF5;">Die Plattform</div>
+      <h2 style="margin-top:8px;">assist — das digitale Herzstück</h2>
+      <p>Die digitale Plattform assist ist das zentrale Organisationssystem des Service- und Expertenzentrums. Hier laufen alle Vorsorge- und Benefitlösungen zusammen.</p>
+    </div>
+    <div class="split rv">
+      <div>
+        <h3 style="color:#fff;margin-bottom:8px;">Über assist werden organisiert:</h3>
+        <div class="assist-list">
+          <div class="assist-item">
+            <i data-lucide="shield" width="18" height="18"></i>
+            Betriebliche Alters- und Gesundheitsvorsorge
+          </div>
+          <div class="assist-item">
+            <i data-lucide="gift" width="18" height="18"></i>
+            Gehaltsnahe Benefits (EntgeltPlus)
+          </div>
+          <div class="assist-item">
+            <i data-lucide="layers" width="18" height="18"></i>
+            Weitere Vorsorgelösungen
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="color:#fff;margin-bottom:8px;">Vorteile für Unternehmen:</h3>
+        <div class="assist-list">
+          <div class="assist-item">
+            <i data-lucide="check-circle" width="18" height="18"></i>
+            Zentrale Übersicht über alle Vorsorgelösungen
+          </div>
+          <div class="assist-item">
+            <i data-lucide="check-circle" width="18" height="18"></i>
+            Digital unterstützte administrative Abläufe
+          </div>
+          <div class="assist-item">
+            <i data-lucide="check-circle" width="18" height="18"></i>
+            Persönliches Serviceteam
+          </div>
+          <div class="assist-item">
+            <i data-lucide="check-circle" width="18" height="18"></i>
+            Strukturierte Organisation der Vorsorgethemen
+          </div>
+          <div class="assist-item">
+            <i data-lucide="check-circle" width="18" height="18"></i>
+            Übersichtliche Dokumentation
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     S7 — TAWODO
+══════════════════════════════════════════ -->
+<section class="section section--gray" id="s7">
+  <div class="container">
+    <div class="sh rv">
+      <div class="label">Optional buchbar</div>
+      <h2 style="margin-top:8px;">Mitarbeiterportal tawodo</h2>
+      <div style="margin-top:10px;">
+        <span class="badge badge--opt">
+          <i data-lucide="plus-circle" width="12" height="12"></i>
+          Zusätzlich buchbare Option
+        </span>
+      </div>
+      <p style="margin-top:14px;">tawodo ist eine zusätzlich buchbare Option. Hier werden Arbeitgeberleistungen für Mitarbeitende dauerhaft sichtbar und erlebbar.</p>
+    </div>
+    <div class="split">
+      <div style="display:flex;justify-content:center;" class="rv">
+        <div class="tawodo-mockup" style="background:none;border:none;box-shadow:var(--shadow-lg);border-radius:var(--r-xl);overflow:hidden;aspect-ratio:unset;max-width:340px;">
+          <img src="/assets/tawodo.jpg" alt="tawodo Mitarbeiterportal" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </div>
+      </div>
+      <div class="tawodo-features rv d2">
+        <div class="tawodo-feature">
+          <div class="ibox ibox--lg">
+            <i data-lucide="star" width="22" height="22"></i>
+          </div>
+          <div>
+            <h3>Attraktivität steigern</h3>
+            <p>Alle Benefits, Vorsorgeleistungen und Arbeitgeberangebote sind für Mitarbeitende zentral sichtbar und jederzeit abrufbar — so werden Leistungen dauerhaft erlebbar, besser wahrgenommen und stärken die Mitarbeiterbindung nachhaltig.</p>
+          </div>
+        </div>
+        <div class="tawodo-feature">
+          <div class="ibox ibox--lg">
+            <i data-lucide="zap" width="22" height="22"></i>
+          </div>
+          <div>
+            <h3>Aufwand minimieren</h3>
+            <p>Vielfältige Funktionalitäten erleichtern das Miteinander: ein mehrsprachiges Kommunikationstool mit Pinnwand und Chat, digitale Dokumentenverwaltung inklusive Lohnupload — übersichtlich, mobil verfügbar und jederzeit abrufbar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     S8 — INTEGRIERTES SYSTEM + CTA (DARK)
+══════════════════════════════════════════ -->
+<section class="section section--dark" id="s8">
+  <div class="container" style="text-align:center;">
+    <div class="rv">
+      <div class="label" style="color:#6BAAF5;">Das Gesamtsystem</div>
+      <h2 style="color:#fff;margin-top:10px;max-width:680px;margin-left:auto;margin-right:auto;">
+        Ein integriertes System für moderne Personalinstrumente
+      </h2>
+      <p style="max-width:580px;margin:14px auto 0;font-size:17.5px;">
+        Mit dem Zusammenspiel der vier Bausteine entsteht eine ganzheitliche Lösung für den Mittelstand.
+      </p>
+    </div>
+    <div class="sys-cards rv" style="max-width:840px;margin-left:auto;margin-right:auto;">
+      <div class="sys-card">
+        <div class="ibox ibox--dark">
+          <i data-lucide="building-2" width="20" height="20"></i>
+        </div>
+        <div style="text-align:left;">
+          <h4>Service- und Expertenzentrum</h4>
+          <p>Vorsorge &amp; Benefits — Beratung und Umsetzung aus einer Hand.</p>
+        </div>
+      </div>
+      <div class="sys-card">
+        <div class="ibox ibox--dark">
+          <i data-lucide="monitor" width="20" height="20"></i>
+        </div>
+        <div style="text-align:left;">
+          <h4>assist</h4>
+          <p>Digitale Plattform — zentrales Organisationssystem für alle Lösungen.</p>
+        </div>
+      </div>
+      <div class="sys-card">
+        <div class="ibox ibox--dark">
+          <i data-lucide="gift" width="20" height="20"></i>
+        </div>
+        <div style="text-align:left;">
+          <h4>EntgeltPlus</h4>
+          <p>Moderne Vorsorgesysteme und gehaltsnahe Mitarbeiterbenefits.</p>
+        </div>
+      </div>
+      <div class="sys-card">
+        <div class="ibox ibox--dark">
+          <i data-lucide="smartphone" width="20" height="20"></i>
+        </div>
+        <div style="text-align:left;">
+          <h4>tawodo</h4>
+          <p>Mitarbeiterportal — Benefits dauerhaft sichtbar und erlebbar machen.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sys-benefits rv" style="max-width:740px;margin-left:auto;margin-right:auto;text-align:left;">
+      <div class="sys-benefit">
+        <i data-lucide="check-circle-2" width="18" height="18"></i>
+        Arbeitgeberattraktivität steigern
+      </div>
+      <div class="sys-benefit">
+        <i data-lucide="check-circle-2" width="18" height="18"></i>
+        Mitarbeitenden zusätzliche Mehrwerte bieten
+      </div>
+      <div class="sys-benefit">
+        <i data-lucide="check-circle-2" width="18" height="18"></i>
+        Organisatorische Abläufe übersichtlich gestalten
+      </div>
+      <div class="sys-benefit">
+        <i data-lucide="check-circle-2" width="18" height="18"></i>
+        Haftung minimieren
+      </div>
+    </div>
+    <div class="bgroup rv" style="justify-content:center;">
+      <a href="mailto:info@helmsauer.de" class="btn btn--white">
+        <i data-lucide="calendar" width="15" height="15"></i>
+        Erstgespräch vereinbaren
+      </a>
+      <a href="#s2" class="btn btn--ghost-w">
+        <i data-lucide="arrow-up" width="15" height="15"></i>
+        Zurück zum Anfang
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__g">
+      <div class="footer__brand">
+        <h3>Helmsauer <em>Gruppe</em></h3>
+        <p>Service- und Expertenzentrum Vorsorge &amp; Benefits — integrierte Personalinstrumente für den Mittelstand.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="#s8">Erstgespräch vereinbaren</a></li>
+          <li><a href="mailto:info@helmsauer.de">info@helmsauer.de</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Datenschutz</a></li>
+          <li><a href="#">Über uns</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <span>© 2026 Helmsauer Gruppe. Alle Rechte vorbehalten.</span>
+      <span>Service- und Expertenzentrum Vorsorge &amp; Benefits</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Icons
+  lucide.createIcons();
+
+  // Hamburger
+  const hb = document.getElementById('hb');
+  const nm = document.getElementById('navmob');
+  hb.addEventListener('click', () => { hb.classList.toggle('open'); nm.classList.toggle('open'); });
+  nm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hb.classList.remove('open'); nm.classList.remove('open'); }));
+
+  // Hero sublines — staggered
+  const lines = document.querySelectorAll('.hero__sub-line');
+  lines.forEach((l, i) => setTimeout(() => l.classList.add('on'), 700 + i * 220));
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
+  }, { threshold: 0.10 });
+  document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
