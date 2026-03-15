@@ -188,6 +188,7 @@
     /* S2 — Background image with overlay */
     .s2--bg {
       position: relative; overflow: hidden;
+      background-color: var(--navy-deep);
       background-size: cover; background-position: center; background-repeat: no-repeat;
     }
     .s2__overlay {
@@ -214,6 +215,10 @@
       border-color: rgba(0,114,203,0.45);
       color: rgba(255,255,255,0.92);
     }
+    /* Tawodo features — explizit weiß, unabhängig von Bild-Laden */
+    .s2--bg .tawodo-feature h3 { color: #fff; }
+    .s2--bg .tawodo-feature p { color: rgba(255,255,255,0.78); }
+    .s2--bg .badge--opt { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); color: #fff; }
 
     .callout {
       background: var(--blue-light);
