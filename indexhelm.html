@@ -185,6 +185,36 @@
       color: #6BAAF5;
     }
 
+    /* S2 — Background image with overlay */
+    .s2--bg {
+      position: relative; overflow: hidden;
+      background-size: cover; background-position: center; background-repeat: no-repeat;
+    }
+    .s2__overlay {
+      position: absolute; inset: 0;
+      background: rgba(7, 18, 36, 0.75);
+      z-index: 0;
+    }
+    .s2--bg > .container { position: relative; z-index: 1; }
+    .s2--bg .label { color: #6BAAF5; }
+    .s2--bg h2, .s2--bg h3 { color: #fff; }
+    .s2--bg p { color: rgba(255,255,255,0.78); }
+    .s2--bg .sh > p { color: rgba(255,255,255,0.82); }
+    .s2--bg .card {
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(255,255,255,0.14);
+      backdrop-filter: blur(8px);
+    }
+    .s2--bg .card:hover { border-color: rgba(0,114,203,0.55); box-shadow: var(--shadow-md); }
+    .s2--bg .card--top { border-top-color: var(--blue-primary); }
+    .s2--bg .ibox { background: rgba(0,114,203,0.28); }
+    .s2--bg .ibox svg { color: #7EB8F7; }
+    .s2--bg .callout {
+      background: rgba(0,114,203,0.22);
+      border-color: rgba(0,114,203,0.45);
+      color: rgba(255,255,255,0.92);
+    }
+
     .callout {
       background: var(--blue-light);
       border-left: 4px solid var(--blue-primary);
@@ -221,11 +251,12 @@
       font-family: var(--font-h); font-size: 18px; font-weight: 700;
       color: var(--text-primary); display: flex; align-items: center; gap: 10px;
     }
-    .nav__mark {
-      width: 34px; height: 34px; background: var(--blue-primary);
-      border-radius: 7px; display: flex; align-items: center; justify-content: center;
+    .nav__mark { display: none; }
+    .nav__logo-img {
+      height: 40px; width: auto; border-radius: 7px;
+      object-fit: cover; object-position: center top;
+      flex-shrink: 0;
     }
-    .nav__mark svg { color: #fff; }
     .nav__logo em { color: var(--blue-primary); font-style: normal; }
     .nav__logo .sub {
       font-size: 11px; font-weight: 400; color: var(--gray-600);
@@ -630,9 +661,7 @@
   <div class="container">
     <div class="nav__i">
       <a href="#" class="nav__logo">
-        <div class="nav__mark">
-          <i data-lucide="shield-check" width="17" height="17"></i>
-        </div>
+        <img src="public/assets/helmsauer-vorsorge.jpg" alt="Helmsauer Gruppe" class="nav__logo-img" />
         <div class="logotext">
           <span>Helmsauer <em>Gruppe</em></span>
           <span class="sub">Service- und Expertenzentrum</span>
@@ -713,15 +742,13 @@
 <!-- ══════════════════════════════════════════
      S2 — NEUE ANFORDERUNGEN
 ══════════════════════════════════════════ -->
-<section class="section section--gray" id="s2">
+<section class="section s2--bg" id="s2" style="background-image: url('public/assets/neue-anforderungen.jpg');">
+  <div class="s2__overlay"></div>
   <div class="container">
     <div class="sh rv">
       <div class="label">Der Kontext</div>
       <h2>Neue Anforderungen an Arbeitgeber</h2>
       <p>Der Mittelstand steht unter Druck. Wer heute attraktiv bleiben will, muss mehr bieten als ein gutes Gehalt — wirtschaftlich sinnvoll und mit echtem Mehrwert für die Belegschaft. Genau hier setzt EntgeltPlus an.</p>
-    </div>
-    <div class="sec-img rv">
-      <img src="public/assets/neue-anforderungen.jpg" alt="Neue Anforderungen an Arbeitgeber im Mittelstand" loading="lazy" />
     </div>
     <div class="g4">
       <div class="card card--top rv d1">
