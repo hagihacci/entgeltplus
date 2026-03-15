@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Über uns — Helmsauer Gruppe · EntgeltPlus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--blue-primary:#0072cb;--blue-dark:#005aa3;--navy-deep:#060d1a;--navy-mid:#0c1829;--white:#fff;--gray-50:#efefef;--gray-200:#d8d8d8;--font-h:'Lexend',sans-serif;--font-b:'Source Sans 3',sans-serif;--r-md:12px;--t:0.22s ease}
+    body{font-family:var(--font-b);color:#1a1a2e;background:var(--white);line-height:1.65}
+    a{text-decoration:none;color:inherit}
+    h1,h2,h3{font-family:var(--font-h);line-height:1.25}
+    .container{max-width:820px;margin:0 auto;padding:0 32px}
+    .container--wide{max-width:1200px;margin:0 auto;padding:0 32px}
+    .nav{position:sticky;top:0;z-index:100;background:rgba(6,13,26,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.07)}
+    .nav__i{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .nav__logo-img{height:38px;width:auto;object-fit:contain;border-radius:6px;display:block}
+    .btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-h);font-weight:600;font-size:14px;border-radius:8px;padding:9px 18px;cursor:pointer;transition:var(--t);border:none}
+    .btn--ghost{color:rgba(255,255,255,0.75);border:1px solid rgba(255,255,255,0.15);background:transparent}
+    .btn--ghost:hover{color:#fff;border-color:rgba(255,255,255,0.4)}
+    .btn--primary{background:var(--blue-primary);color:#fff}
+    .btn--primary:hover{background:var(--blue-dark)}
+    .page-header{background:var(--navy-deep);padding:60px 0 52px}
+    .label{color:#6BAAF5;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;font-family:var(--font-h);margin-bottom:14px}
+    .page-header h1{color:#fff;font-size:clamp(28px,5vw,40px);font-weight:700}
+    .page-header p{color:rgba(255,255,255,0.6);font-size:17px;margin-top:14px;max-width:560px}
+    .content{padding:56px 0 80px}
+    .content p{color:#444;font-size:16px;line-height:1.75;margin-bottom:20px}
+    .content h2{font-family:var(--font-h);font-size:22px;color:#1a1a2e;margin:44px 0 16px}
+    .highlight{background:var(--gray-50);border-left:4px solid var(--blue-primary);border-radius:0 var(--r-md) var(--r-md) 0;padding:20px 24px;margin:32px 0}
+    .highlight p{margin:0;font-size:17px;font-weight:600;color:#1a1a2e;line-height:1.5}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:44px 0}
+    .stat{text-align:center;padding:28px 16px;background:var(--gray-50);border-radius:var(--r-md)}
+    .stat__num{font-family:var(--font-h);font-size:32px;font-weight:700;color:var(--blue-primary);margin-bottom:6px}
+    .stat__label{font-size:14px;color:#666}
+    .cta-box{margin-top:60px;background:var(--navy-deep);border-radius:var(--r-md);padding:44px 40px;text-align:center}
+    .cta-box h2{color:#fff;font-size:22px;margin-bottom:10px}
+    .cta-box p{color:rgba(255,255,255,0.6);font-size:16px;margin-bottom:24px}
+    .footer{background:var(--navy-mid);padding:32px 0 20px}
+    .footer__inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .footer__inner>span{color:rgba(255,255,255,0.3);font-size:13px}
+    .footer__links{display:flex;gap:20px;flex-wrap:wrap}
+    .footer__links a{color:rgba(255,255,255,0.5);font-size:13px;transition:color var(--t)}
+    .footer__links a:hover{color:#fff}
+    .footer__links a.active{color:rgba(255,255,255,0.2);pointer-events:none}
+    .announcement-bar{background:#040b15;text-align:center;padding:8px}
+    .announcement-bar span{font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:0.05em}
+    @media(max-width:640px){
+      .container,.container--wide{padding:0 20px}
+      .page-header{padding:40px 0 32px}
+      .content{padding:32px 0 56px}
+      .btn--ghost{display:none}
+      .stats{grid-template-columns:1fr}
+      .cta-box{padding:28px 20px}
+      .footer__inner{flex-direction:column;text-align:center}
+    }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="container--wide">
+    <div class="nav__i">
+      <a href="indexhelm.html"><img src="public/assets/helmsauer-vorsorge.jpg" alt="Helmsauer Gruppe" class="nav__logo-img"/></a>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a href="indexhelm.html" class="btn btn--ghost"><i data-lucide="arrow-left" width="14" height="14"></i> Zurück</a>
+        <a href="https://outlook.office.com/book/EntgeltPlusKostenfreieArbeitgeberAnalyse@konermann.de/" target="_blank" rel="noopener" class="btn btn--primary"><i data-lucide="calendar" width="14" height="14"></i> Erstgespräch vereinbaren</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="page-header">
+  <div class="container">
+    <div class="label">Unternehmen</div>
+    <h1>Über uns</h1>
+    <p>Wir unterstützen den Mittelstand bei modernen Vergütungslösungen — seit Jahren, branchenübergreifend.</p>
+  </div>
+</div>
+<div class="content">
+  <div class="container">
+
+    <p>Der Mittelstand ist das Rückgrat der deutschen Wirtschaft. Gleichzeitig stehen viele Unternehmen heute vor großen Herausforderungen: steigende Lohnkosten, zunehmender Fachkräftemangel und der Wunsch, Mitarbeitenden attraktive Zusatzleistungen zu bieten.</p>
+
+    <div class="highlight"><p>Genau hier setzen wir an.</p></div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat__num">3.000+</div>
+        <div class="stat__label">betreute Kunden</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">20.000+</div>
+        <div class="stat__label">verwaltete Verträge</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">100%</div>
+        <div class="stat__label">Mittelstand-Fokus</div>
+      </div>
+    </div>
+
+    <p>Wir unterstützen Unternehmen dabei, moderne und wirtschaftlich sinnvolle Vergütungslösungen zu entwickeln. Gemeinsam mit unseren Partnern betreuen wir heute über 3.000 Kunden und mehr als 20.000 Verträge.</p>
+
+    <p>Unser Ziel ist es, Arbeitgebern praktikable Möglichkeiten aufzuzeigen, wie sie ihre Mitarbeiter finanziell entlasten, ihre Arbeitgeberattraktivität stärken und gleichzeitig wirtschaftlich effizient handeln können.</p>
+
+    <h2>Unser Ansatz</h2>
+    <p>Dabei setzen wir auf intelligente und alternative Vergütungsmodelle, die steuerlich optimiert, maximal rechtssicher gestaltet und nachhaltig in bestehende Unternehmensstrukturen integriert werden.</p>
+
+    <p>Unsere Beratung richtet sich bewusst nicht nur an eine einzelne Branche. Wir unterstützen Unternehmen aus allen Gewerken — vom Handwerk über Dienstleistungsunternehmen bis hin zu Praxen im Heilwesen, medizinischen Einrichtungen oder anderen mittelständischen Betrieben. Die zugrundeliegenden Herausforderungen sind häufig ähnlich: Mitarbeiter gewinnen, Mitarbeiter halten und gleichzeitig wirtschaftlich verantwortungsvoll handeln.</p>
+
+    <h2>Langjährige Erfahrung</h2>
+    <p>Durch unsere langjährige Erfahrung und die Vielzahl betreuter Unternehmen können wir branchenübergreifend Lösungen entwickeln, die sowohl für Arbeitgeber als auch für Mitarbeitende einen echten Mehrwert schaffen.</p>
+
+    <p>Wir begleiten Unternehmen von der ersten Analyse über die Konzeption bis zur Einführung und stehen auch langfristig als Ansprechpartner zur Verfügung. Transparenz, Verständlichkeit und eine praxisnahe Umsetzung stehen dabei immer im Mittelpunkt unserer Arbeit.</p>
+
+    <p>Unser Anspruch ist es nicht nur, Konzepte vorzustellen, sondern nachhaltige Lösungen zu schaffen, die im Unternehmensalltag funktionieren und für Arbeitgeber wie Mitarbeitende spürbare Vorteile bieten.</p>
+
+    <div class="cta-box">
+      <h2>Bereit für den nächsten Schritt?</h2>
+      <p>Vereinbaren Sie jetzt Ihr kostenloses Erstgespräch und erfahren Sie, wie wir Ihr Unternehmen voranbringen können.</p>
+      <a href="https://outlook.office.com/book/EntgeltPlusKostenfreieArbeitgeberAnalyse@konermann.de/" target="_blank" rel="noopener" class="btn btn--primary" style="font-size:15px;padding:12px 28px;">
+        <i data-lucide="calendar" width="16" height="16"></i>
+        Erstgespräch vereinbaren
+      </a>
+    </div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="container--wide">
+    <div class="footer__inner">
+      <span>© 2026 Helmsauer Gruppe. Alle Rechte vorbehalten.</span>
+      <div class="footer__links">
+        <a href="ueber-uns.html" class="active">Über uns</a>
+        <a href="faq.html">FAQ</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="impressum.html">Impressum</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="announcement-bar"><span>website powered by enjoyyourevolution</span></div>
+<script>lucide.createIcons();</script>
+</body>
+</html>
