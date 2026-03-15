@@ -614,8 +614,9 @@
       .badge { font-size: 12px; padding: 5px 10px; }
 
       /* ── S2 / S7 — Hintergrundbild-Sektionen ── */
-      /* Platzhalter-Div in Tawodo-Split ausblenden */
-      .tawodo-placeholder { display: none; }
+      /* Tawodo-Logo auf Mobile zentriert anzeigen */
+      .tawodo-placeholder { display: flex; justify-content: center; margin-bottom: 8px; }
+      .tawodo-placeholder img { max-width: 200px; }
       /* ibox in dunklem Kontext */
       .s2--bg .ibox { background: rgba(255,255,255,0.15); }
       .s2--bg .ibox svg { color: #fff; }
@@ -1062,8 +1063,7 @@
 <!-- ══════════════════════════════════════════
      S7 — TAWODO
 ══════════════════════════════════════════ -->
-<section class="section s2--bg" id="s7" style="background-image: url('/assets/tawodo.jpg');">
-  <div class="s2__overlay"></div>
+<section class="section section--gray" id="s7">
   <div class="container">
     <div class="sh rv">
       <div class="label">Optional buchbar</div>
@@ -1077,7 +1077,9 @@
       <p style="margin-top:14px;">tawodo ist eine zusätzlich buchbare Option. Hier werden Arbeitgeberleistungen für Mitarbeitende dauerhaft sichtbar und erlebbar.</p>
     </div>
     <div class="split">
-      <div class="tawodo-placeholder"></div>
+      <div class="tawodo-placeholder" style="display:flex;align-items:center;justify-content:center;">
+        <img src="/assets/tawodo-logo.png" alt="tawodo Logo" style="max-width:300px;width:100%;height:auto;" />
+      </div>
       <div class="tawodo-features rv d2">
         <div class="tawodo-feature">
           <div class="ibox ibox--lg">
