@@ -13,16 +13,16 @@
        DESIGN TOKENS
     ═══════════════════════════════════════ */
     :root {
-      --blue-primary:   #1B67D2;
-      --blue-dark:      #1047A9;
-      --blue-light:     #EAF1FB;
+      --blue-primary:   #0072cb;
+      --blue-dark:      #005aaa;
+      --blue-light:     #e5f0fa;
       --navy-deep:      #0B1F3A;
       --navy-mid:       #112240;
       --navy-card:      #162B4A;
       --white:          #FFFFFF;
-      --gray-50:        #F7F9FC;
-      --gray-100:       #EEF1F7;
-      --gray-200:       #DDE3EE;
+      --gray-50:        #efefef;
+      --gray-100:       #e4e8f0;
+      --gray-200:       #d0d7e3;
       --gray-400:       #8A97AE;
       --gray-600:       #5A6880;
       --gray-700:       #3D4A5C;
@@ -100,6 +100,32 @@
     .sh--c p { margin-left: auto; margin-right: auto; }
 
     /* ═══════════════════════════════════════
+       SECTION IMAGES
+    ═══════════════════════════════════════ */
+    .sec-img {
+      margin: 36px 0 48px;
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      max-width: 62%;
+    }
+    .sec-img img { width: 100%; height: auto; display: block; }
+    .sec-img--center { margin-left: auto; margin-right: auto; }
+    .sec-img--right { margin-left: auto; }
+
+    /* ═══════════════════════════════════════
+       BENEFIT ICONS (echte Bilder)
+    ═══════════════════════════════════════ */
+    .benefit-icon-img {
+      width: 38px; height: 38px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .benefit-icon-img--blue {
+      filter: invert(30%) sepia(99%) saturate(600%) hue-rotate(185deg) brightness(90%) contrast(110%);
+    }
+
+    /* ═══════════════════════════════════════
        BUTTONS
     ═══════════════════════════════════════ */
     .btn {
@@ -109,7 +135,7 @@
       transition: var(--t); white-space: nowrap;
     }
     .btn--primary { background: var(--blue-primary); color: #fff; }
-    .btn--primary:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(27,103,210,0.38); }
+    .btn--primary:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,114,203,0.38); }
     .btn--ghost { border: 1.5px solid var(--blue-primary); color: var(--blue-primary); }
     .btn--ghost:hover { background: var(--blue-light); transform: translateY(-2px); }
     .btn--ghost-w { border: 1.5px solid rgba(255,255,255,0.55); color: #fff; }
@@ -518,6 +544,9 @@
       .intro__body p { font-size: 15px; line-height: 1.7; }
       .intro__highlight { font-size: 15px; padding: 14px 16px; }
 
+      /* Section images */
+      .sec-img { max-width: 100% !important; margin: 24px 0 32px; }
+
       /* Section headers */
       .sh { margin-bottom: 32px; }
       .sh p { font-size: 15px; max-width: 100%; }
@@ -689,7 +718,10 @@
     <div class="sh rv">
       <div class="label">Der Kontext</div>
       <h2>Neue Anforderungen an Arbeitgeber</h2>
-      <p>Der Arbeitsmarkt verändert sich. Unternehmen stehen heute vor mehreren zentralen Herausforderungen:</p>
+      <p>Der Mittelstand steht unter Druck. Wer heute attraktiv bleiben will, muss mehr bieten als ein gutes Gehalt — wirtschaftlich sinnvoll und mit echtem Mehrwert für die Belegschaft. Genau hier setzt EntgeltPlus an.</p>
+    </div>
+    <div class="sec-img rv">
+      <img src="/assets/neue-anforderungen.jpg" alt="Neue Anforderungen an Arbeitgeber im Mittelstand" loading="lazy" />
     </div>
     <div class="g4">
       <div class="card card--top rv d1">
@@ -759,19 +791,19 @@
       <div class="ep-benefits rv d2">
         <h3>Im Rahmen von EntgeltPlus einsetzbar:</h3>
         <div class="ep-benefit-item">
-          <i data-lucide="gift" width="18" height="18"></i>
+          <img src="/assets/icon-warengutschein.png" alt="Warengutschein" class="benefit-icon-img" />
           Warengutscheine
         </div>
         <div class="ep-benefit-item">
-          <i data-lucide="utensils" width="18" height="18"></i>
+          <img src="/assets/icon-essensscheck.png" alt="Essensscheck" class="benefit-icon-img" />
           Essenszuschüsse
         </div>
         <div class="ep-benefit-item">
-          <i data-lucide="wifi" width="18" height="18"></i>
+          <img src="/assets/icon-internetzuschuss.png" alt="Internetzuschuss" class="benefit-icon-img" />
           Internetpauschalen
         </div>
         <div class="ep-benefit-item">
-          <i data-lucide="sun" width="18" height="18"></i>
+          <img src="/assets/icon-erholungsbeihilfe.png" alt="Erholungsbeihilfe" class="benefit-icon-img benefit-icon-img--blue" />
           Erholungsbeihilfen
         </div>
         <p class="ep-more">… und viele weitere Bausteine</p>
@@ -844,6 +876,9 @@
       <div class="rv">
         <div class="label">Ihr Partner</div>
         <h2 style="margin-top:8px;">Service- und Expertenzentrum Vorsorge &amp; Benefits</h2>
+        <div class="sec-img" style="max-width:100%;margin-bottom:28px;">
+          <img src="/assets/service-expertenzentrum.jpg" alt="Service- und Expertenzentrum Helmsauer" loading="lazy" />
+        </div>
         <p style="margin-top:14px;">Das Service- und Expertenzentrum bündelt innerhalb der Helmsauer Gruppe alle Kompetenzen rund um:</p>
         <div class="sz-comps">
           <div class="badge"><i data-lucide="shield" width="12" height="12"></i> Betriebliche Altersvorsorge</div>
@@ -903,6 +938,9 @@
     <div class="sh rv">
       <div class="label" style="color:#6BAAF5;">Die Plattform</div>
       <h2 style="margin-top:8px;">assist — das digitale Herzstück</h2>
+      <div class="sec-img sec-img--center" style="max-width:65%;">
+        <img src="/assets/assist.jpg" alt="assist — digitale Plattform" loading="lazy" />
+      </div>
       <p>Die digitale Plattform assist ist das zentrale Organisationssystem des Service- und Expertenzentrums. Hier laufen alle Vorsorge- und Benefitlösungen zusammen.</p>
     </div>
     <div class="split rv">
@@ -1069,7 +1107,7 @@
       </div>
     </div>
     <div class="bgroup rv" style="justify-content:center;">
-      <a href="mailto:info@helmsauer.de" class="btn btn--white">
+      <a href="https://outlook.office.com/book/EntgeltPlusKostenfreieArbeitgeberAnalyse@konermann.de/" target="_blank" rel="noopener" class="btn btn--white">
         <i data-lucide="calendar" width="15" height="15"></i>
         Erstgespräch vereinbaren
       </a>
@@ -1094,16 +1132,17 @@
       <div class="footer__col">
         <h4>Kontakt</h4>
         <ul>
-          <li><a href="#s8">Erstgespräch vereinbaren</a></li>
-          <li><a href="mailto:info@helmsauer.de">info@helmsauer.de</a></li>
+          <li><a href="https://outlook.office.com/book/EntgeltPlusKostenfreieArbeitgeberAnalyse@konermann.de/" target="_blank" rel="noopener">Erstgespräch vereinbaren</a></li>
+          <li><a href="mailto:info@konermann.de">info@konermann.de</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h4>Rechtliches</h4>
         <ul>
-          <li><a href="#">Impressum</a></li>
-          <li><a href="#">Datenschutz</a></li>
-          <li><a href="#">Über uns</a></li>
+          <li><a href="#" onclick="openModal('modal-impressum');return false;">Impressum</a></li>
+          <li><a href="#" onclick="openModal('modal-datenschutz');return false;">Datenschutz</a></li>
+          <li><a href="#" onclick="openModal('modal-ueberuns');return false;">Über uns</a></li>
+          <li><a href="#" onclick="openModal('modal-faq');return false;">FAQ</a></li>
         </ul>
       </div>
     </div>
@@ -1113,6 +1152,146 @@
     </div>
   </div>
 </footer>
+
+<!-- ══════════════════════════════════════════
+     MODALS
+══════════════════════════════════════════ -->
+<style>
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 9999;
+    background: rgba(11,31,58,0.55); backdrop-filter: blur(4px);
+    align-items: center; justify-content: center; padding: 24px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: #fff; border-radius: var(--r-xl);
+    max-width: 720px; width: 100%; max-height: 88vh;
+    overflow-y: auto; box-shadow: var(--shadow-lg);
+    padding: 48px 52px; position: relative;
+    animation: modalIn 0.22s ease;
+  }
+  @keyframes modalIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  .modal-close {
+    position: absolute; top: 20px; right: 22px;
+    background: var(--gray-50); border: none; border-radius: 50%;
+    width: 36px; height: 36px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; color: var(--text-secondary); transition: var(--t);
+  }
+  .modal-close:hover { background: var(--gray-100); color: var(--text-primary); }
+  .modal-box h2 { font-size: clamp(22px, 3vw, 30px); margin-bottom: 20px; }
+  .modal-box h3 { font-size: 18px; margin: 24px 0 8px; color: var(--text-primary); }
+  .modal-box p { color: var(--text-secondary); margin-bottom: 12px; line-height: 1.75; }
+  .modal-box strong { color: var(--text-primary); }
+  .modal-box ul { padding-left: 18px; margin-bottom: 12px; }
+  .modal-box ul li { color: var(--text-secondary); margin-bottom: 6px; list-style: disc; }
+  .modal-faq-item { border-bottom: 1px solid var(--gray-100); padding: 18px 0; }
+  .modal-faq-item:last-child { border-bottom: none; }
+  .modal-faq-item strong { display: block; color: var(--text-primary); margin-bottom: 6px; font-size: 16px; }
+  @media (max-width: 768px) { .modal-box { padding: 32px 24px; } }
+</style>
+
+<!-- Modal: Über uns -->
+<div class="modal-overlay" id="modal-ueberuns">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-ueberuns')">✕</button>
+    <h2>Über uns</h2>
+    <p>Der Mittelstand ist das Rückgrat der deutschen Wirtschaft. Gleichzeitig stehen viele Unternehmen heute vor großen Herausforderungen: steigende Lohnkosten, zunehmender Fachkräftemangel und der Wunsch, Mitarbeitenden attraktive Zusatzleistungen zu bieten.</p>
+    <p>Genau hier setzen wir an.</p>
+    <p>Wir unterstützen Unternehmen dabei, moderne und wirtschaftlich sinnvolle Vergütungslösungen zu entwickeln. Gemeinsam mit unseren Partnern betreuen wir heute über 3.000 Kunden und mehr als 20.000 Verträge.</p>
+    <p>Unser Ziel ist es, Arbeitgebern praktikable Möglichkeiten aufzuzeigen, wie sie ihre Mitarbeiter finanziell entlasten, ihre Arbeitgeberattraktivität stärken und gleichzeitig wirtschaftlich effizient handeln können.</p>
+    <p>Dabei setzen wir auf intelligente und alternative Vergütungsmodelle, die steuerlich optimiert, maximal rechtssicher gestaltet und nachhaltig in bestehende Unternehmensstrukturen integriert werden.</p>
+    <p>Unsere Beratung richtet sich bewusst nicht nur an eine einzelne Branche. Wir unterstützen Unternehmen aus allen Gewerken — vom Handwerk über Dienstleistungsunternehmen bis hin zu Praxen im Heilwesen, medizinischen Einrichtungen oder anderen mittelständischen Betrieben.</p>
+    <p>Wir begleiten Unternehmen von der ersten Analyse über die Konzeption bis zur Einführung und stehen auch langfristig als Ansprechpartner zur Verfügung. Transparenz, Verständlichkeit und eine praxisnahe Umsetzung stehen dabei immer im Mittelpunkt unserer Arbeit.</p>
+  </div>
+</div>
+
+<!-- Modal: FAQ -->
+<div class="modal-overlay" id="modal-faq">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-faq')">✕</button>
+    <h2>Häufig gestellte Fragen</h2>
+    <p style="margin-bottom:28px;">Hier finden Sie Antworten auf die häufigsten Fragen rund um gehaltsnahe Benefits und betriebliche Vorsorgelösungen.</p>
+    <div class="modal-faq-item">
+      <strong>Gehaltsnahe Benefits gleichzeitig? Geht das überhaupt?</strong>
+      <p>Selbstverständlich. Jeder Baustein basiert auf einem eigenen gesetzlichen Paragraphen und kann problemlos parallel zu den anderen gewährt werden.</p>
+    </div>
+    <div class="modal-faq-item">
+      <strong>Sind Nachweise erforderlich?</strong>
+      <p>Der Mitarbeitende bestätigt per Unterschrift, dass ihm Kosten in Höhe der angegebenen Summe tatsächlich entstehen. Originale Rechnungen müssen nicht laufend eingereicht werden, sind jedoch im Falle einer Betriebsprüfung bereitzuhalten. Wir begleiten Sie bei der rechtssicheren Umsetzung.</p>
+    </div>
+    <div class="modal-faq-item">
+      <strong>Müssen gehaltsnahe Benefits versteuert werden?</strong>
+      <p>Das hängt vom Baustein ab. Viele sind vollständig steuer- und sozialversicherungsfrei, bei anderen übernimmt der Arbeitgeber eine gesetzlich festgelegte Pauschalsteuer — so bleibt die Leistung für den Mitarbeitenden dennoch netto wirksam. Wir gestalten Ihr Konzept so, dass Sie stets im steuerlich sicheren Bereich bleiben.</p>
+    </div>
+    <div class="modal-faq-item">
+      <strong>Wie wirken sich gehaltsnahe Benefits auf die Sozialversicherung aus?</strong>
+      <p>Steuerfreie Benefits sind oft auch sozialversicherungsfrei. Das kann sich rechnerisch auf die Bemessungsgrundlage von Rente, Arbeitslosengeld oder Krankengeld auswirken. Die entstehende RV-Lücke wird durch die betriebliche Altersvorsorge jedoch um ein Vielfaches überkompensiert.</p>
+    </div>
+    <div class="modal-faq-item">
+      <strong>Was passiert mit den Benefits bei Kündigung oder Jobwechsel?</strong>
+      <p>Sachbezüge enden mit dem Arbeitsverhältnis. Die betriebliche Altersvorsorge bleibt bestehen und kann privat weitergeführt oder zum neuen Arbeitgeber mitgenommen werden.</p>
+    </div>
+    <div class="modal-faq-item">
+      <strong>Mit welcher Unterstützung kann ich rechnen?</strong>
+      <p>Von der Konzeption über die laufende Betreuung bis hin zu Rückfragen durch Ihren Steuerberater sind wir an Ihrer Seite.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Datenschutz -->
+<div class="modal-overlay" id="modal-datenschutz">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-datenschutz')">✕</button>
+    <h2>Datenschutz</h2>
+    <p>Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Nachfolgend informieren wir Sie über die Art, den Umfang und Zweck der Verarbeitung personenbezogener Daten auf dieser Website gemäß der Datenschutz-Grundverordnung (DSGVO).</p>
+    <h3>Verantwortlicher</h3>
+    <p><strong>Konermann &amp; Partner GmbH</strong><br/>Dürrenhofsstraße 4, 90402 Nürnberg<br/>Telefon: +49 (0) 571 404 37 000<br/>E-Mail: info@konermann.de<br/>Website: www.konermann.de</p>
+    <h3>Erhebung und Verarbeitung personenbezogener Daten</h3>
+    <p>Personenbezogene Daten werden auf dieser Website nur erhoben, wenn Sie uns diese freiwillig mitteilen. Dies kann beispielsweise im Rahmen folgender Aktivitäten erfolgen:</p>
+    <ul>
+      <li>Nutzung des Kontaktformulars</li>
+      <li>Anfrage zu unseren Dienstleistungen</li>
+      <li>Terminvereinbarung über ein Terminbuchungssystem</li>
+    </ul>
+    <p>Zu den verarbeiteten Daten können insbesondere gehören: Name, Unternehmen, E-Mail-Adresse, Telefonnummer, Unternehmensgröße, Nachricht oder Anfrageninhalt.</p>
+    <h3>Terminbuchung</h3>
+    <p>Auf dieser Website besteht die Möglichkeit, Beratungstermine über ein Terminbuchungssystem zu vereinbaren. Dabei werden die von Ihnen eingegebenen Daten (z. B. Name, E-Mail-Adresse, Telefonnummer sowie gewünschter Termin) verarbeitet, um den Termin zu organisieren und durchzuführen. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO.</p>
+    <h3>Ihre Rechte</h3>
+    <p>Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Widerspruch gegen die Verarbeitung sowie Datenübertragbarkeit. Darüber hinaus steht Ihnen ein Beschwerderecht bei der zuständigen Datenschutzaufsichtsbehörde zu.</p>
+    <p style="margin-top:20px;font-size:14px;color:var(--gray-400);">Stand: März 2026</p>
+  </div>
+</div>
+
+<!-- Modal: Impressum -->
+<div class="modal-overlay" id="modal-impressum">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-impressum')">✕</button>
+    <h2>Impressum</h2>
+    <p>Angaben gemäß § 5 TMG</p>
+    <p><strong>Konermann &amp; Partner GmbH</strong><br/>Dürrenhofsstraße 4<br/>90402 Nürnberg</p>
+    <h3>Kontakt</h3>
+    <p>Telefon: +49 (0) 571 404 37 000<br/>E-Mail: info@konermann.de<br/>Website: www.konermann.de</p>
+    <h3>Weitere Standorte</h3>
+    <p>Verwaltung Minden: Klausenwall 20a, 32423 Minden<br/>Niederlassung Bocholt: Hohenzollernstraße 24, 46395 Bocholt</p>
+    <h3>Vertretungsberechtigte</h3>
+    <p>Geschäftsführer: Marco Gerhardt, Zoran Tepsic, Holger Konermann<br/>Sitz: Nürnberg | Amtsgericht Nürnberg, HRB 45069</p>
+    <h3>Vermittlerregister</h3>
+    <p>Registrierung als Versicherungsmakler: D-1Q78-W16WL-89<br/>DIHK – Deutsche Industrie- und Handelskammer, Breite Straße 29, 10178 Berlin</p>
+    <p>Erlaubnis nach § 34d Abs. 1 GewO<br/>IHK für München und Oberbayern, Max-Joseph-Straße 2, 80333 München</p>
+    <h3>Schlichtungsstellen gem. § 214 VVG</h3>
+    <ul>
+      <li>Versicherungsombudsmann e.V., Postfach 08 06 32, 10006 Berlin</li>
+      <li>Ombudsmann für die private Kranken- und Pflegeversicherung, Postfach 06 02 22, 10052 Berlin</li>
+    </ul>
+    <h3>Online-Streitbeilegung</h3>
+    <p>Plattform der EU-Kommission: <a href="https://webgate.ec.europa.eu/odr/main/" target="_blank" rel="noopener" style="color:var(--blue-primary);">webgate.ec.europa.eu/odr</a></p>
+    <h3>Datenschutzbeauftragter</h3>
+    <p>Herr Christian Volkmer – Projekt 29 GmbH &amp; Co. KG – Ostengasse 14, 93047 Regensburg</p>
+    <h3>Verantwortlich i.S.d. Presserechts</h3>
+    <p>Holger Konermann</p>
+  </div>
+</div>
 
 <script>
   // Icons
@@ -1133,6 +1312,26 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
   }, { threshold: 0.10 });
   document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+  // Modals
+  function openModal(id) {
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', e => {
+      if (e.target === overlay) closeModal(overlay.id);
+    });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
+    }
+  });
 </script>
 </body>
 </html>
