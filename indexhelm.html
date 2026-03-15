@@ -215,7 +215,13 @@
       border-color: rgba(0,114,203,0.45);
       color: rgba(255,255,255,0.92);
     }
-    /* Tawodo features — explizit weiß, unabhängig von Bild-Laden */
+    /* Tawodo features in dunklem Hintergrund */
+    .s2--bg .tawodo-feature {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.14);
+      backdrop-filter: blur(8px);
+    }
+    .s2--bg .tawodo-feature:hover { border-color: rgba(0,114,203,0.5); transform: translateY(-2px); }
     .s2--bg .tawodo-feature h3 { color: #fff; }
     .s2--bg .tawodo-feature p { color: rgba(255,255,255,0.78); }
     .s2--bg .badge--opt { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); color: #fff; }
