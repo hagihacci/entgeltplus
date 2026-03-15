@@ -1018,7 +1018,8 @@
 <!-- ══════════════════════════════════════════
      S7 — TAWODO
 ══════════════════════════════════════════ -->
-<section class="section section--gray" id="s7">
+<section class="section s2--bg" id="s7" style="background-image: url('/assets/tawodo.jpg');">
+  <div class="s2__overlay"></div>
   <div class="container">
     <div class="sh rv">
       <div class="label">Optional buchbar</div>
@@ -1032,11 +1033,7 @@
       <p style="margin-top:14px;">tawodo ist eine zusätzlich buchbare Option. Hier werden Arbeitgeberleistungen für Mitarbeitende dauerhaft sichtbar und erlebbar.</p>
     </div>
     <div class="split">
-      <div style="display:flex;justify-content:center;" class="rv">
-        <div class="tawodo-mockup" style="background:none;border:none;box-shadow:var(--shadow-lg);border-radius:var(--r-xl);overflow:hidden;aspect-ratio:unset;max-width:340px;">
-          <img src="/assets/tawodo.jpg" alt="tawodo Mitarbeiterportal" style="width:100%;height:100%;object-fit:cover;display:block;" />
-        </div>
-      </div>
+      <div></div>
       <div class="tawodo-features rv d2">
         <div class="tawodo-feature">
           <div class="ibox ibox--lg">
@@ -1178,10 +1175,20 @@
   </div>
 </footer>
 
+<div class="announcement-bar">
+  website powered by <strong>enjoyyourevolution</strong>
+</div>
+
 <!-- ══════════════════════════════════════════
      MODALS
 ══════════════════════════════════════════ -->
 <style>
+  .announcement-bar {
+    background: #0a0a0a; color: rgba(255,255,255,0.38);
+    text-align: center; font-size: 11px; letter-spacing: 0.06em;
+    padding: 8px 16px; font-family: var(--font-b);
+  }
+  .announcement-bar strong { color: rgba(255,255,255,0.62); font-weight: 600; }
   .modal-overlay {
     display: none; position: fixed; inset: 0; z-index: 9999;
     background: rgba(11,31,58,0.55); backdrop-filter: blur(4px);
