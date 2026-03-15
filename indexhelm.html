@@ -541,114 +541,147 @@
       .footer__brand { grid-column: 1 / -1; }
     }
 
-    /* ── Mobile ── */
+    /* ══════════════════════════════════════════
+       MOBILE FIRST — max 768px
+    ══════════════════════════════════════════ */
     @media (max-width: 768px) {
-      :root { --py: 72px; }
+      :root { --py: 60px; }
 
-      /* Base */
+      /* ── Base ── */
       body { font-size: 15px; }
-      .container { padding: 0 24px; }
+      .container { padding: 0 20px; }
 
-      /* Nav */
+      /* ── Nav ── */
       .nav__actions { display: none; }
       .nav__hb { display: flex; }
-      .nav__logo .sub { display: none; }
-      .nav__logo { font-size: 16px; gap: 8px; }
+      .nav__logo-img { height: 42px; }
 
-      /* Hero */
-      .hero .container { padding-left: 24px; padding-right: 24px; }
-      .hero__c { padding: 80px 0 80px; max-width: 100%; }
+      /* ── Hero ── */
+      .hero .container { padding-left: 20px; padding-right: 20px; }
+      .hero__c { padding: 72px 0 64px; max-width: 100%; }
       .hero__tag {
         display: flex; flex-direction: column; align-items: flex-start;
-        border-radius: 14px; padding: 14px 16px; gap: 10px;
-        font-size: 12px; white-space: normal; line-height: 1.5; max-width: 100%;
+        border-radius: 12px; padding: 12px 14px; gap: 8px;
+        font-size: 11.5px; line-height: 1.5; max-width: 100%;
       }
-      .hero__tag svg { width: 24px; height: 24px; flex-shrink: 0; }
-      .hero h1 { font-size: clamp(26px, 7vw, 36px); margin-bottom: 20px; }
-      .hero__sub-line { font-size: 15px; }
-      .hero__subs { margin-bottom: 28px; }
+      .hero__tag svg { width: 22px; height: 22px; flex-shrink: 0; }
+      .hero h1 { font-size: clamp(24px, 7vw, 34px); margin-bottom: 16px; letter-spacing: -0.01em; }
+      .hero__sub-line { font-size: 15px; gap: 10px; }
+      .hero__sub-line::before { width: 16px; }
+      .hero__subs { margin-bottom: 24px; gap: 4px; }
       .hero__scroll { display: none; }
 
-      /* Intro */
-      .intro { padding: 64px 0 60px; }
+      /* ── Intro ── */
+      .intro { padding: 52px 0 44px; }
       .intro__body { gap: 14px; }
-      .intro__body p { font-size: 15px; line-height: 1.7; }
+      .intro__body p { font-size: 15px; line-height: 1.72; }
       .intro__highlight { font-size: 15px; padding: 14px 16px; }
 
-      /* Section images */
-      .sec-img { max-width: 100% !important; margin: 24px 0 32px; }
+      /* ── Section images ── */
+      .sec-img { max-width: 100% !important; margin: 20px 0 28px; border-radius: var(--r-lg); }
 
-      /* Section headers */
-      .sh { margin-bottom: 32px; }
-      .sh p { font-size: 15px; max-width: 100%; }
-      h2 { font-size: clamp(22px, 5.5vw, 28px); }
+      /* ── Typography ── */
+      h2 { font-size: clamp(21px, 6vw, 27px); }
       h3 { font-size: 16px; }
       h4 { font-size: 15px; }
       p { font-size: 15px; }
+      .label { font-size: 10.5px; }
+      .sh { margin-bottom: 28px; }
+      .sh p { font-size: 15px; max-width: 100%; margin-top: 10px; }
 
-      /* Grids → alle einspaltig */
+      /* ── Grids → einspaltig ── */
       .split, .split--60, .g3, .g4, .g2 { grid-template-columns: 1fr; gap: 16px; }
 
-      /* Buttons */
+      /* ── Buttons ── */
       .bgroup { flex-direction: column; gap: 10px; }
       .bgroup .btn { width: 100%; justify-content: center; }
       .btn { padding: 13px 20px; font-size: 15px; }
 
-      /* Cards */
+      /* ── Cards ── */
       .card { padding: 20px; }
-
-      /* Callout */
       .callout { font-size: 15px; padding: 14px 16px; }
+      .badge { font-size: 12px; padding: 5px 10px; }
 
-      /* S3 EntgeltPlus */
-      .ep-benefits { padding: 24px 20px; border-radius: var(--r-lg); }
-      .ep-benefits h3 { font-size: 16px; margin-bottom: 14px; }
-      .ep-benefit-item { font-size: 15px; padding: 12px 0; }
-      .ep-variants { gap: 8px; }
-      .ep-variant { font-size: 14px; padding: 10px 14px; width: 100%; justify-content: center; }
+      /* ── S2 / S7 — Hintergrundbild-Sektionen ── */
+      /* Platzhalter-Div in Tawodo-Split ausblenden */
+      .tawodo-placeholder { display: none; }
+      /* ibox in dunklem Kontext */
+      .s2--bg .ibox { background: rgba(255,255,255,0.15); }
+      .s2--bg .ibox svg { color: #fff; }
+      .s2--bg .tawodo-feature { padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .s2--bg .tawodo-feature:last-child { border-bottom: none; }
 
-      /* S4 Hebelwirkung */
-      .hbw-intro { margin-bottom: 28px; }
+      /* ── S3 EntgeltPlus ── */
+      .ep-benefits { padding: 24px 18px; border-radius: var(--r-lg); }
+      .ep-benefits h3 { font-size: 16px; margin-bottom: 12px; }
+      .ep-benefit-item { font-size: 15px; padding: 12px 0; gap: 12px; }
+      .benefit-icon-img { width: 30px; height: 30px; }
+      .ep-variants { gap: 8px; flex-direction: column; }
+      .ep-variant { font-size: 14px; padding: 11px 14px; width: 100%; justify-content: center; }
+      .ep-more { font-size: 13px; }
+
+      /* ── S4 Hebelwirkung ── */
+      .hbw-intro { margin-bottom: 24px; text-align: left; }
       .hbw-intro p { font-size: 15px; }
-      .hbw-quote-top { font-size: 15px; padding: 16px 18px; margin-bottom: 24px; }
-      .hbw-step { padding: 20px; }
-      .hbw-step h3 { font-size: 16px; }
-      .hbw-step p { font-size: 15px; }
-      .badge { font-size: 12.5px; padding: 5px 10px; }
+      .hbw-quote-top { font-size: 14.5px; padding: 14px 16px; margin-bottom: 20px; }
+      .hbw-arrow { display: none; }
+      .hbw-flow { gap: 12px; }
+      .hbw-step { padding: 18px; }
+      .hbw-step h3 { font-size: 15px; }
+      .hbw-step p { font-size: 14.5px; }
+      .hbw-step__pills { gap: 8px; flex-wrap: wrap; }
+      .hbw-step__num { width: 28px; height: 28px; font-size: 13px; flex-shrink: 0; }
 
-      /* S5 Service-Zentrum */
-      .sz-comps { gap: 8px; margin-bottom: 24px; }
+      /* ── S5 Service-Zentrum ── */
+      .sz-comps { gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+      .sz-step { gap: 12px; padding: 14px 0; }
+      .sz-step__num { width: 28px; height: 28px; font-size: 13px; flex-shrink: 0; }
       .sz-step__body h4 { font-size: 15px; }
-      .sz-step__body p { font-size: 15px; }
+      .sz-step__body p { font-size: 14.5px; }
 
-      /* S6 Assist */
-      .assist-item { font-size: 15px; }
+      /* ── S6 Assist ── */
+      /* text oben, bild unten — DOM-Reihenfolge bereits korrekt */
+      .assist-list { gap: 10px; }
+      .assist-item { font-size: 15px; gap: 10px; }
 
-      /* S7 Tawodo */
-      .tawodo-mockup { max-width: 100%; aspect-ratio: 16/9; border-radius: var(--r-lg); }
-      .tawodo-feature { padding: 18px; }
-      .tawodo-feature h3 { font-size: 16px; }
-      .tawodo-feature p { font-size: 15px; }
+      /* ── S7 Tawodo ── */
+      .tawodo-features { padding: 0; }
+      .tawodo-feature { display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; }
+      .tawodo-feature h3 { font-size: 16px; margin-bottom: 6px; }
+      .tawodo-feature p { font-size: 14.5px; }
+      .ibox--lg { width: 44px; height: 44px; flex-shrink: 0; }
 
-      /* S8 CTA */
-      .sys-cards { grid-template-columns: 1fr; gap: 12px; margin: 28px 0; }
-      .sys-card { padding: 18px 16px; }
-      .sys-benefits { grid-template-columns: 1fr; gap: 10px; margin-bottom: 32px; }
+      /* ── S8 CTA ── */
+      .sys-cards { grid-template-columns: 1fr; gap: 10px; margin: 24px 0; }
+      .sys-card { padding: 16px; gap: 12px; }
+      .sys-benefits { grid-template-columns: 1fr; gap: 10px; margin-bottom: 24px; }
       .sys-benefit { font-size: 15px; }
 
-      /* Footer */
-      .footer { padding: 44px 0 24px; }
-      .footer__g { grid-template-columns: 1fr; gap: 28px; padding-bottom: 32px; }
+      /* ── Footer ── */
+      .footer { padding: 40px 0 20px; }
+      .footer__g { grid-template-columns: 1fr; gap: 24px; padding-bottom: 28px; }
       .footer__brand { grid-column: unset; }
-      .footer__col a { font-size: 15px; }
-      .footer__bot { flex-direction: column; gap: 6px; text-align: center; font-size: 12.5px; }
+      .footer__brand p { font-size: 14px; }
+      .footer__col h4 { font-size: 14px; margin-bottom: 10px; }
+      .footer__col a { font-size: 14.5px; }
+      .footer__bot { flex-direction: column; gap: 5px; text-align: center; font-size: 12px; }
+
+      /* ── Modals ── */
+      .modal-box { padding: 28px 20px; border-radius: var(--r-lg); }
+      .modal-box h2 { font-size: 20px; margin-bottom: 16px; }
+      .modal-box h3 { font-size: 16px; margin: 18px 0 6px; }
+      .modal-box p { font-size: 14.5px; }
+      .modal-faq-item strong { font-size: 15px; }
     }
 
     /* ── Small Mobile ── */
     @media (max-width: 390px) {
-      .container { padding: 0 20px; }
-      .hero h1 { font-size: 24px; }
-      .ep-benefits { padding: 18px 16px; }
+      :root { --py: 52px; }
+      .container { padding: 0 16px; }
+      .hero .container { padding-left: 16px; padding-right: 16px; }
+      .hero h1 { font-size: 22px; }
+      .ep-benefits { padding: 18px 14px; }
+      .sec-img { border-radius: var(--r-md); }
     }
   </style>
 </head>
@@ -1033,7 +1066,7 @@
       <p style="margin-top:14px;">tawodo ist eine zusätzlich buchbare Option. Hier werden Arbeitgeberleistungen für Mitarbeitende dauerhaft sichtbar und erlebbar.</p>
     </div>
     <div class="split">
-      <div></div>
+      <div class="tawodo-placeholder"></div>
       <div class="tawodo-features rv d2">
         <div class="tawodo-feature">
           <div class="ibox ibox--lg">
